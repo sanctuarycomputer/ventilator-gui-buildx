@@ -1,4 +1,5 @@
 FROM balenalib/rpi-raspbian:latest
+ENTRYPOINT ["/bin/bash"]
 
 RUN apt-get update && \
     apt-get install -y \
