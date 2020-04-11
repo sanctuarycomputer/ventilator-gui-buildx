@@ -19,12 +19,6 @@ jobs:
           mkdir -p ~/.docker/cli-plugins
           mv docker-buildx ~/.docker/cli-plugins/
           chmod a+x ~/.docker/cli-plugins/docker-buildx
-      - run:
-        name: Build image
-        command: |
-          docker buildx build -f ./gui/Dockerfile \
-            --platform linux/amd64,linux/arm64,linux/arm/v7 
-            -t respiraworks/gui:$CIRCLE_SHA1
 
 workflows:
   commit:
