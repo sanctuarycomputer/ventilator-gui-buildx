@@ -12,7 +12,7 @@ jobs:
       - docker/check
       - docker/build:
           image: respirworks/gui
-          dockerfiles: ~/project/gui.Dockerfile
+          dockerfile: ./gui/Dockerfile
 
 workflows:
   commit:
