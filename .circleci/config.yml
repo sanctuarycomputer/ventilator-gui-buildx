@@ -17,9 +17,6 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y docker-ce
       - run:
-          name: Enable buildx
-          command: |
-      - run:
           name: Install QEMU
           command: |
             sudo docker run -it --rm --privileged multiarch/qemu-user-static --reset --credential yes --persistent yes
