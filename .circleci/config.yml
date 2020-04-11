@@ -1,13 +1,10 @@
-version: 2.1
-
-orbs:
-  docker: circleci/docker@1.0.1
+version: 2
 
 jobs:
   build-gui-image:
-    executor: docker/docker
+    machine:
+      image: ubuntu-19:10
     steps:
-      - setup_remote_docker
       - checkout
 
 workflows:
