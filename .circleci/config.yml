@@ -5,8 +5,9 @@ orbs:
 
 jobs:
   build-gui-image:
-    executor: docker/machine
+    executor: docker/docker
     steps:
+      - setup_remote_docker
       - checkout
       - run:
           name: Install buildx
@@ -21,7 +22,7 @@ jobs:
       - run:
           name: Build image
           command: |
-            docker buildx build -f ./gui/Dockerfile --platform linux/amd64 -t respiraworks/gui:$CIRCLE_SHA1 .
+            docker buildx build -f ./gui/Dockerfile --platform linux/amd64 -t respiraworks/gui:$CIRCLE_SHA1
 
 workflows:
   commit:
