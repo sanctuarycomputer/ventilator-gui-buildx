@@ -5,14 +5,14 @@ orbs:
 
 jobs:
   build-gui-image:
-    executor: docker/docker
+    executor: docker/machine
     steps:
       - setup_remote_docker
       - checkout
       - run:
           name: Install buildx
           command: |
-            BUILDX_BINARY_URL="https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.linux-arm64"
+            BUILDX_BINARY_URL="https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.linux-amd64"
             curl --output docker-buildx \
               --silent --show-error --location --fail --retry 3 \
               "$BUILDX_BINARY_URL"
