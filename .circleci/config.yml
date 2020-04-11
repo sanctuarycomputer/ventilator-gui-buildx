@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-gui-image:
     machine:
-      image: ubuntu-19:10
+      image: ubuntu-1604:201903-01
     steps:
       - checkout
 
