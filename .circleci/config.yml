@@ -7,7 +7,6 @@ jobs:
   build-gui-image:
     executor: docker/machine
     steps:
-      - setup_remote_docker
       - checkout
       - run:
           name: Install buildx
