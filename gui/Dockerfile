@@ -1,2 +1,2 @@
-FROM resin/rpi-raspbian:latest
+FROM balenalib/rpi-raspbian:latest
 RUN apt-get update
