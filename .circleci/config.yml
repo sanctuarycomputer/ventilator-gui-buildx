@@ -19,7 +19,6 @@ jobs:
       - run:
           name: Enable buildx
           command: |
-            export DOCKER_CLI_EXPERIMENTAL=enabled
       - run:
           name: Install QEMU
           command: |
@@ -29,15 +28,13 @@ jobs:
           command: |
             sudo apt-get install -y binfmt-support
       - run:
-          name: Install binfmt-support
+          name: Do arm64 build
           command: |
+            export DOCKER_CLI_EXPERIMENTAL=enabled
             docker buildx create --name gui
             docker buildx use gui
             docker buildx inspect --bootstrap
-      - run:
-          name: Do cross platform Docker build
-          command: |
-            docker buildx build --platform linux/arm64 .
+            cd ~/project/gui && docker buildx build --platform linux/arm64 .
 
 workflows:
   commit:
