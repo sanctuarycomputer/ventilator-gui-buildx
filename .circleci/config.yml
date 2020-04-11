@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   build-gui-image:
-    executor: docker/docker
+    executor: docker/machine
     steps:
       - setup_remote_docker
       - checkout
